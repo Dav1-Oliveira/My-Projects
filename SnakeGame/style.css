@@ -1,0 +1,229 @@
+    /* Define o estilo geral do corpo da página */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Mantém o alinhamento centralizado para computadores */
+        height: 100vh;
+        background-color: #2C3F34; /* Cor de fundo verde escura */
+        font-family: 'Arial', sans-serif;
+        padding: 0px;
+        margin: 0px;
+        overflow: auto; /* Permite o scroll se necessário, mas apenas se o conteúdo exceder a altura da viewport */
+    }
+
+    /* Define o estilo do tabuleiro do jogo */
+    #gameBoard {
+        width: 400px;
+        height: 400px;
+        background: linear-gradient(to bottom, #365946 0%, #4D735A 100%); /* Gradiente verde mais claro */
+        position: relative;
+        border: 1px solid #000;
+        border-radius: 3px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+    }
+
+    /* Define o estilo da cobra */
+    .snake {
+        width: 20px;
+        height: 20px;
+        background-color: #09A603; /* Cor da cobra mais clara */
+        position: absolute;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(0, 255, 128, 0.5);
+        transition: left 0.2s, top 0.2s;
+    }
+
+    /* Define o estilo da fruta */
+    .fruit {
+        width: 20px;
+        height: 20px;
+        background-color: #A61717; /* Cor da fruta mais clara */
+        position: absolute;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+        transition: left 0.2s, top 0.2s;
+    }
+
+
+    /* Define o estilo dos elementos de score e record */
+    #score, #record {
+        position: absolute;
+        top: 10px;
+        color: #fff; /* Cor do texto branco */
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    /* Define o estilo específico do elemento de score */
+    #score {
+        left: 10px;
+        background-color: rgba(0, 255, 0, 0.2); /* Cor de fundo verde */
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        font-size: 24px; /* Tamanho padrão para computadores */
+    }
+
+    /* Define o estilo específico do elemento de record */
+    #record {
+        left: 200px;
+        background-color: rgba(255, 99, 71, 0.2); /* Cor de fundo laranja */
+        box-shadow: 0 0 10px rgba(255, 99, 71, 0.5);
+        font-size: 24px; /* Tamanho padrão para computadores */
+    }
+
+    /* Define o estilo do botão de reiniciar */
+    #restartButton {
+        position: absolute;
+        bottom: 200px; /* Ajuste a posição inferior para mover o botão um pouco mais acima na tela */
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 20px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        background-color: #4D735A; /* Cor de fundo verde mais escura */
+        color: #fff; /* Cor do texto branco */
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Ajustes para botões virtuais e botão de reiniciar */
+    .game-controls {
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Centraliza os botões virtuais horizontalmente */
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    /* Ajuste o estilo dos botões virtuais para posicioná-los abaixo do botão de reiniciar */
+    .virtual-buttons {
+        position: absolute;
+        bottom: 80px; /* Ajuste a posição inferior para colocar os botões abaixo do botão de reiniciar */
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px; /* Espaçamento entre os botões */
+    }
+
+    /* Estilos para os botões virtuais */
+    .virtual-buttons button {
+        padding: 30px 40px; /* Ajuste o padding para garantir que os botões tenham o mesmo tamanho */
+        font-size: 1.5rem;
+        border: none;
+        background-color: #6C8C77; /* Cor de fundo verde mais clara */
+        color: #fff; /* Cor do texto branco */
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        width: 50px; /* Ajuste a largura para garantir que os botões tenham o mesmo tamanho */
+        height: 50px; /* Ajuste a altura para garantir que os botões tenham o mesmo tamanho */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .virtual-buttons button:hover {
+        background-color: #86A691; /* Cor de fundo verde mais escura ao passar o mouse */
+        transform: scale(1.05);
+    }
+
+    /* Centraliza o botão "up" acima dos botões "left", "down" e "right" */
+    #upButton {
+        position: absolute;
+        top: -120%; /* Move o botão "up" para cima, mas dentro do contêiner */
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translateX(-50%); /* Ajusta a posição para o centro exato */
+        z-index: 1; /* Garante que o botão "up" fique acima dos outros botões */
+    }
+
+    /* Estilo para o contêiner da linha de botões */
+    .button-row {
+        display: flex;
+        flex-direction: row; /* Alinha os botões horizontalmente */
+        justify-content: center; /* Centraliza os botões horizontalmente */
+        gap: 10px; /* Espaçamento entre os botões */
+        position: relative; /* Adiciona posicionamento relativo para permitir posicionamento absoluto dos botões filhos */
+    }
+
+    /* Define o estilo do tutorial e instruções */
+    #tutorial {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        color: #fff; /* Cor do texto branco */
+        font-size: 20px;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo preta */
+        padding: 5px 10px;
+        border-radius: 5px;
+        max-width: 300px;
+        word-wrap: break-word;
+        display: block; /* Mostra o tutorial por padrão */
+    }
+
+
+    /* Responsividade específica para dispositivos móveis */
+/* Responsividade específica para dispositivos móveis */
+@media (max-width: 600px) {
+    body {
+        align-items: flex-start;
+        padding-top: 10px;
+        overflow: hidden;
+    }
+    #gameBoard {
+        width: 100vw;
+        height: 100vw;
+        max-height: 90vh;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
+    #score, #record {
+        position: absolute; /* Posicionamento absoluto dentro do .game-info */
+    }
+    #score {
+        left: 10px; /* Ajuste conforme necessário */
+    }
+    #record {
+        right: 10px; /* Ajuste conforme necessário */
+    }
+    #restartButton {
+        bottom: 300px;
+    }
+    .virtual-buttons {
+        display: flex; /* Exibe os botões virtuais em dispositivos móveis */
+    }
+    #tutorial {     
+        display: none;
+    }
+    /* Ajuste o .game-info conforme necessário para dispositivos móveis */
+    .game-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: auto; /* Ocupa apenas o espaço necessário */
+        max-width: 90vw; /* Limita a largura máxima para evitar scroll indesejado */
+        position: relative; /* Adiciona posicionamento relativo para permitir posicionamento absoluto dos elementos filhos */
+        transform: translateY(-50%);
+        margin: auto; /* Centraliza horizontalmente e evita que invada a tela do jogo */
+        padding: auto; /* Adiciona um pouco de padding para evitar que os elementos ultrapassem os limites do jogo */
+    }
+}
+
+/* Esconde os botões virtuais em dispositivos maiores (desktop) */
+@media (min-width: 601px) {
+    .virtual-buttons {
+        display: none; /* Esconde os botões virtuais em dispositivos maiores */
+    }
+    #tutorial {
+        display: block; /* Mostra o tutorial em computadores */
+    }
+}
+

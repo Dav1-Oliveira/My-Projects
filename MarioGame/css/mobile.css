@@ -1,0 +1,23 @@
+@media screen and (max-width: 1280px) {
+  .pipe {
+    position: absolute;
+    bottom: 0;
+    width: 70px;
+    animation: pipe-animation 0.7s infinite linear;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .pipe {
+    position: absolute;
+    bottom: 0;
+    width: 60px;
+    animation: pipe-animation 0.7s infinite linear;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .game-board {
+    height: 100vh;
+  }
+}

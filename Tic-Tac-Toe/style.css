@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2C3F34; /* Verde escuro para o fundo */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+#game {
+    text-align: center;
+    background: linear-gradient(to bottom, #365946 0%, #4D735A 100%); /* Gradiente para o container do jogo */
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+#board {
+    display: grid;
+    grid-template: repeat(3, 100px) / repeat(3, 100px);
+    gap: 5px;
+    margin: auto;
+}
+
+.cell {
+    background-color: #fff; /* Mantém o fundo branco para as células */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 2em;
+    color: #09A603; /* Cor da fonte da cobra (utilizada aqui para o texto dentro das células) */
+    border-radius: 5px; /* Adiciona bordas arredondadas às células */
+}
+
+#restartButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #4D735A; /* Verde escuro para o botão */
+    color: #fff; /* Texto branco */
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#restartButton:hover {
+    background-color: #365946; /* Verde um pouco mais claro ao passar o mouse */
+}
+
+#status {
+    margin-bottom: 20px;
+    color: #fff; /* Texto branco para o status */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}

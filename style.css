@@ -1,0 +1,54 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2C3F34; /* Verde escuro para o fundo */
+    margin: 0;
+    padding: 20px;
+    color: #fff; /* Texto branco para melhor contraste */
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #365946; /* Verde mais claro para o container */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Sombra mais acentuada para contraste */
+    border-radius: 3px; /* Borda arredondada suave */
+}
+
+h1 {
+    color: #FFD700; /* Ouro para o título, para destacar sem usar vermelho */
+    text-align: center;
+    font-size: 2.5em; /* Aumenta o tamanho da fonte */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra no texto para melhor leitura */
+    margin-bottom: 1em; /* Aumenta o espaço abaixo do título */
+}
+
+.projects {
+    list-style: none;
+    padding: 0;
+}
+
+.project {
+    display: block;
+    background-color: #4D735A; /* Gradiente verde mais claro, usando cor sólida */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.project:hover, .project:focus {
+    background-color: #365946; /* Verde um pouco mais escuro para hover/focus */
+    transform: translateY(-2px);
+}
+
+.project.touch-active {
+    background-color: #006080; /* Azul escuro para indicar ativação por toque, ajuste se necessário */
+}
+
+br {
+    display: none;
+}

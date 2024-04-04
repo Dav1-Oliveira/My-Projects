@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Cobrinha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="gameBoard"></div>
+        <div class="game-info">
+            <div id="score">Pontuação: 0</div>
+            <div id="record">Recorde: 0</div>
+        </div>
+        <div class="game-controls">
+            <button id="restartButton" style="display: none;">Reiniciar Jogo</button>
+            <div class="virtual-buttons">
+                <button id="upButton">↑</button>
+                <div class="button-row">
+                    <button id="leftButton">←</button>
+                    <button id="downButton">↓</button>
+                    <button id="rightButton">→</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tutorial">
+        <p>Use as setas do teclado para mover a cobra.</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
