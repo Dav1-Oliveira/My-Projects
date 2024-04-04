@@ -237,6 +237,11 @@ displayNextShape()
 
 const $score = document.querySelector('.score')
 let score = 0
+
+let record = localStorage.getItem('record') || 0;
+const $recordElement = document.querySelector('.record');
+$recordElement.textContent = `${record}`;
+
 function updateScore(updateValue) {
   score += updateValue
   $score.textContent = score
@@ -256,7 +261,20 @@ function updateScore(updateValue) {
     timeMoveDown = 110
   }
   timerId = setInterval(moveDown, timeMoveDown)
+
+  updateRecord(score);
+
 }
+
+function updateRecord(newScore) {
+  if (newScore > record) {
+     record = newScore;
+     // Atualizar o localStorage
+     localStorage.setItem('record', record);
+     // 3. Atualizar o elemento HTML do recorde
+     $recordElement.textContent = `${record}`;
+  }
+ }
 
 function gameOver() {
   if (currentShape.some(squareIndex =>
