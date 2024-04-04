@@ -112,7 +112,7 @@ function freeze() {
 
     checkIfRowIsFilled()
 
-    updateScore(2)
+    updateScore(5)
     shapeFreezeAudio.play()
     displayNextShape()
     gameOver()
@@ -205,7 +205,7 @@ function checkIfRowIsFilled() {
       $gridSquares = squaresRemoved.concat($gridSquares)
       $gridSquares.forEach(square => $grid.appendChild(square))
 
-      updateScore(20)
+      updateScore(50)
       completeLineAudio.play()
 
     }
