@@ -19,12 +19,15 @@ body {
 }
 
 .container {
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  height: 100vh; /* Altura total da viewport */
   padding: 16px;
 }
 
 .buttons-container {
   margin-bottom: 16px;
-  width: 280px;
+  max-width: 450px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
@@ -32,7 +35,7 @@ body {
 
 .buttons-container button{
   border: none;
-  background: #1e2ede;
+  background-color: #4D735A;
   color: #fff;
   font-size: 16px;
   font-weight: bold;
@@ -40,8 +43,9 @@ body {
   height: 32px;
   justify-content: center; 
   align-items: center;
-
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: filter 0.2s;
+  margin-top: 16px;
 }
 
 .buttons-container button:hover {
@@ -54,6 +58,7 @@ body {
 
 .grid {
   width: 200px;
+  min-width: 200px;
   height: 400px;
   background: linear-gradient(to bottom, #365946 0%, #4D735A 100%);
   display: flex;
@@ -85,8 +90,18 @@ body {
 }
 
 .content-right h3 {
-  font-size: 32px;
+  font-size: 28px;
   margin-top: 24px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  bottom: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  max-width: 250px;
+  word-wrap: break-word;
+  display: block;
 }
 
 .shapePainted {
@@ -116,17 +131,32 @@ body {
 
 .mobile-buttons-container {
   margin-top: 20px;
-  max-width: 300px;
+  max-width: 400px;
   display: none;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 64px 64px;
   gap: 12px;
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mobile-buttons-container button {
-  background: linear-gradient(to right, #0033cc, #5c82f4);
+  background: linear-gradient(to right, #2f4d39, #4D735A);
   border: none;
-  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 7px;
+  height: 62px;
+  justify-content: center; 
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: filter 0.2s;
+
 }
 
 .mobile-buttons-container button span {
@@ -157,14 +187,9 @@ body {
   }
 
   .mobile-buttons-container {
-    margin: auto; /* Centraliza horizontalmente */
+    margin: 10px; /* Centraliza horizontalmente */
     display: grid;
     justify-content: center; /* Centraliza verticalmente */
   }
 
-  .mobile-buttons-container {
-    margin: auto; /* Centraliza horizontalmente */
-    display: grid;
-    justify-content: center; /* Centraliza verticalmente */
-  }
 }
