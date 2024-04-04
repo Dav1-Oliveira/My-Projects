@@ -89,11 +89,12 @@ $startStopButton.addEventListener('click', () => {
 
 
 function moveDown() {
-  freeze()
-
-  undraw()
-  currentPosition += gridWidth
-  draw()
+  if (gameIsOver === false) {
+    freeze()
+    undraw()
+    currentPosition += gridWidth
+    draw()
+  } 
 }
 
 function freeze() {
@@ -276,6 +277,8 @@ function updateRecord(newScore) {
   }
  }
 
+ let gameIsOver = false
+
 function gameOver() {
   if (currentShape.some(squareIndex =>
     $gridSquares[squareIndex + currentPosition].classList.contains('filled')
@@ -284,6 +287,7 @@ function gameOver() {
     gameOverAudio.play()
     $startStopButton.ariaDisabled = true
     $score.innerHTML += "<br />" + "GAME OVER"
+    gameIsOver = true
   }
 }
 
